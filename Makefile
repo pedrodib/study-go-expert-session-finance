@@ -1,0 +1,9 @@
+build-image:
+	sudo docker build . -t pedrodib/finance
+run-app:
+	sudo docker-compose -f .devops/app.yml up -d
+lint:
+	golint ./...
+	go fmt -n ./...
+unit_test:-
+	go test ./...
